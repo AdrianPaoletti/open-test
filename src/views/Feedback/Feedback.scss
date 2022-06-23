@@ -1,0 +1,81 @@
+@import "/src/styles/colors";
+@import "/src/styles/fonts";
+
+.feedback {
+  margin: 48px 0;
+  display: flex;
+  justify-content: center;
+  &__alert {
+    border: 2px solid $terciary-color;
+  }
+
+  p {
+    margin-top: 8px;
+    font-size: 0.875rem;
+  }
+
+  &__information {
+    display: flex;
+    padding: 32px 48px;
+  }
+
+  &__text {
+    padding: 0 16px;
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px 0;
+    border-top: 2px solid $terciary-color;
+    & button {
+      margin: 0 48px;
+      font-family: $font-family-bold;
+      font-size: 0.9375rem;
+      border-color: transparent;
+      background-color: transparent;
+      color: $primary-color;
+      cursor: pointer;
+      & i {
+        padding-left: 8px;
+      }
+    }
+  }
+
+  &__loading {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    &:after {
+      content: " ";
+      display: block;
+      width: 48px;
+      height: 48px;
+      margin: 8px;
+      border-radius: 50%;
+      border: 6px solid $primary-color;
+      border-color: $primary-color transparent $primary-color transparent;
+      animation: feedback__loading 1.2s linear infinite;
+    }
+  }
+  @keyframes feedback__loading {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  .feedback {
+    &__information {
+      padding: 24px 24px;
+      align-items: flex-start;
+    }
+    &__text {
+      padding-right: 0;
+    }
+  }
+}

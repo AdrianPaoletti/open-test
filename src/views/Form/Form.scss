@@ -1,0 +1,55 @@
+@import "/src/styles/fonts";
+@import "/src/styles/colors";
+
+.form {
+  padding: 48px 0;
+
+  label {
+    font-family: $font-family-bold;
+    font-size: 0.9375rem;
+  }
+
+  input {
+    &[type="text"] {
+      color: $secondary-color;
+    }
+  }
+
+  &__input {
+    height: 48px;
+    padding: 16px 12px;
+    margin: 8px 0;
+    font-size: 0.9375rem;
+    font-family: $font-family-regular;
+    border: 1px solid $light-gray;
+    &:focus {
+      outline: none;
+    }
+  }
+
+  ::placeholder {
+    font-size: 0.9375rem;
+    color: $light-gray;
+    padding-bottom: 8px;
+  }
+
+  &__clue-container {
+    display: flex;
+    flex-direction: column;
+    p {
+      padding: 16px 0;
+    }
+  }
+
+  &__clue-counter {
+    color: $light-gray;
+    font-size: 0.875rem;
+    align-self: flex-end;
+  }
+}
+
+@media (max-width: 706px) {
+  .form {
+    padding-top: 32px;
+  }
+}

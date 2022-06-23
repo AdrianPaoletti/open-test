@@ -1,0 +1,66 @@
+@import "/src/styles/colors";
+
+.stepper {
+  width: 100%;
+  height: 80px;
+  background-color: #ccd5da;
+  border-radius: 4px 4px 0 0;
+  border-bottom: 2px solid #80808073;
+  &__container {
+    height: 100%;
+  }
+
+  &.stepper,
+  &__container,
+  &__number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__line {
+    width: 32px;
+    height: 3px;
+    background-color: $dark-gray;
+    &--done {
+      background-color: $primary-color;
+    }
+  }
+  &__number-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  &__number {
+    width: 24px;
+    height: 24px;
+    border-radius: 50px;
+    background-color: $dark-gray;
+    color: $white;
+    &--active {
+      width: 36px;
+      height: 36px;
+      background-color: $secondary-color;
+    }
+    &--done {
+      background-color: $primary-color;
+    }
+  }
+
+  &__arrow {
+    position: absolute;
+    margin: 0 8px;
+    background-color: $white;
+    width: 20px;
+    height: 20px;
+    bottom: -11px;
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    border-top: 2px solid #80808073;
+    border-left: 2px solid #80808073;
+  }
+}

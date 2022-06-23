@@ -1,0 +1,55 @@
+@import "/src/styles/colors";
+@import "/src/styles/fonts";
+
+.App {
+  background: linear-gradient(180deg, #b7bec5 80px, $terciary-color 0);
+  padding: 24px 16px;
+  &__content {
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 48px);
+    background-color: white;
+    position: relative;
+    border-radius: 4px;
+  }
+}
+
+.steps-container {
+  padding: 32px 80px;
+  flex-grow: 2;
+  &__select-container {
+    display: flex;
+    justify-content: space-between;
+    & select {
+      font-family: $font-family-regular;
+      border-color: transparent;
+      padding: 8px;
+    }
+  }
+  &__title {
+    font-family: $font-family-bold;
+    font-size: 2rem;
+    span {
+      padding: 8px 0;
+      border-bottom: 4px solid #40c2df;
+    }
+  }
+}
+
+@media (max-width: 706px) {
+  .steps-container {
+    padding: 32px 56px;
+    &__select-container {
+      flex-direction: column;
+      & select {
+        padding: 16px 0;
+        width: max-content;
+      }
+    }
+    &__title {
+      span {
+        border-bottom: none;
+      }
+    }
+  }
+}
